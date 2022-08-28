@@ -1,0 +1,12 @@
+@mixin grid($mq){
+    .#{ $mq } {
+        flex: 1 0 0;
+    }
+    
+    @for $col from 1 through $cols{
+        .#{ $mq }_#{ $col }{
+            flex: 0 0 calc(100% / $cols) * $col;
+            max-width: calc(100% / $cols) * $col;
+        }
+    }
+}
