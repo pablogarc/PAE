@@ -1,0 +1,46 @@
+<h1>Resultados</h1>
+
+<button class="home">Volver a home</button>
+
+<div class="container border">
+        <div class="gs-grid">
+            {{#each articles}}
+                <div class="sm-col_6 md-col_4 lg-col_3">
+                    <div class="col">
+                        <div>{{title}}</div>
+                        <img src={{urlToImage}}>
+                        <button class="open-button">
+                            Ver más
+                        </button>
+                        <dialog class="modal" id="modal">
+                            <h3>{{title}}</h3>
+                            <p>description: {{description}}</p>
+                            <p>author: {{author}}</p>
+                            <button class="close-button">
+                                Cerrar
+                            </button>
+                        </dialog>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+</div>
+
+<script>
+    const modal = document.querySelector('.modal');
+    const openModal = document.querySelector('.open-button');
+    const closeModal = document.querySelector('.close-button');
+    const home = document.querySelector('.home');
+
+    openModal.addEventListener('click', () => {
+        modal.showModal();
+    })
+
+    closeModal.addEventListener('click', () => {
+        modal.close();
+    })
+
+    home.addEventListener('click', () => {
+        window.history.back();
+    })
+</script>
