@@ -1,0 +1,50 @@
+@import "variables";
+@import "mixins";
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+
+    height: 100vh;
+    max-width: 1024px;
+}
+
+.gs-grid {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+[class*="col_"] {
+    width: 100%;
+    max-width: 100%;
+}
+
+.col {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: grid;
+    place-items: center;
+    border: $border;
+}
+
+.border {
+    border: $border;
+}
+
+// Include mixins
+@include grid(col);
+
+// Media queries
+
+@media screen and (min-width: 576px){
+    @include grid(sm-col);
+}
+
+@media screen and (min-width: 768px){
+    @include grid(md-col);
+}
+
+@media screen and (min-width: 980px){
+    @include grid(lg-col);
+}
+
