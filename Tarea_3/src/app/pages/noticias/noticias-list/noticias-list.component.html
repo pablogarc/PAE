@@ -1,0 +1,5 @@
+<ul>
+    <li [ngClass]="{'active': current == elemento}" *ngFor="let elemento of noticias">
+        <a (click)="selectNoticia(elemento)">{{elemento.title}}</a>
+    </li>
+</ul>
