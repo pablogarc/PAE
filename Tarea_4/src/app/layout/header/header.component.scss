@@ -1,0 +1,30 @@
+header {
+    height: 80px;
+    width: 100%;
+    background-color: blue;
+    color: white;
+    line-height: 80px;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    h2 {
+        margin: 0;
+        display: inline-block;
+    }
+
+    ul {
+
+        list-style: none;
+        float: right;
+        margin: 0;
+
+        li {
+            display: inline-block;
+            margin-left: 10px;
+
+            a {
+                color: white;
+            }
+        };
+    }
+}

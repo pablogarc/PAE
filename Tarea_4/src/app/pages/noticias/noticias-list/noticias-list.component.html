@@ -1,0 +1,7 @@
+<ul>
+    <li [ngClass]="{'active': current == elemento}" *ngFor="let elemento of noticias">
+        <a (click)="selectNoticia(elemento)" [routerLink]="['/noticias']" [queryParams]="{ titulo: elemento.title }" queryParamsHandling="preserve">
+            {{elemento.title}}
+        </a>
+    </li>
+</ul>
