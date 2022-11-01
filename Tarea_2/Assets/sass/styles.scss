@@ -1,11 +1,36 @@
 @import "variables";
 @import "mixins";
 
+h1 {
+    text-align: center;
+}
+
+form {
+    text-align: center;
+}
+
+img {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    max-width: 250px;
+    max-height: 250px;
+}
+
+.modal {
+    padding: 1em;
+    max-width: 50ch;
+    border: 0;
+}
+
+.modal::backdrop {
+    background: rgb(0 0 0 / .4);
+}
+
 .container {
     width: 100%;
     margin: 0 auto;
 
-    height: 100vh;
+    height: 100%;
     max-width: 1024px;
 }
 
