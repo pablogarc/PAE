@@ -1,11 +1,11 @@
-let database; 
+let database;
 
 function db(_db) {
-    if(_db) {
-        database = _db;
-    }
+  if (_db) {
+    database = _db;
+  }
 
-    return database;
+  return database;
 }
 
 module.exports = db;

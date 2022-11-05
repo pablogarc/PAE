@@ -1,0 +1,17 @@
+{
+  "swaggerDefinition": {
+    "swagger": "2.0",
+    "info": {
+      "description": "Basic api project to save meme images",
+      "version": "1.0.0",
+      "title": "MEME API",
+      "contact": {
+        "author": "FS",
+        "email": "fs@iteso"
+      }
+    },
+    "basePath": "/",
+    "host": "localhost:3000"
+  },
+  "apis": ["./index.js"]
+}

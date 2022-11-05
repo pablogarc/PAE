@@ -1,8 +1,5 @@
-const userCollection = 'user';
-
-
+const userCollection = "user";
 
 module.exports = {
-    userCollection,
-    
+  userCollection,
 };
