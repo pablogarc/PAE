@@ -6,7 +6,11 @@ require("dotenv").config();
 const verifyTokenMiddleware = (req, res, next) => {
   const token = req.body.token;
   if (!token) return res.status(403).send("No token present");
-  jwt.verify(token, process.env.JWT_SECRET_KEY);
+  try {
+    jwt.verify(token, process.env.JWT_SECRET_KEY);
+  } catch (err) {
+    return res.status(400).send("Invalid Token");
+  }
   next();
 };
 

@@ -19,8 +19,12 @@ class User {
 
   verifyToken(token) {
     if (!token) return false;
-    jwt.verify(token, process.env.JWT_SECRET_KEY);
-    return true;
+    try {
+      jwt.verify(token, process.env.JWT_SECRET_KEY);
+      return true;
+    } catch(err) {
+      return false;
+    }
   }
 
   async login(userData) {
@@ -35,7 +39,7 @@ class User {
     if (userData.password !== data.password) return errorMsg;
 
     let payLoad = { id: data._id };
-    let token = jwt.sign(payLoad, process.env.JWT_SECRET_KEY, {noTimestamp: true});
+    let token = jwt.sign(payLoad, process.env.JWT_SECRET_KEY, {expiresIn: "5h"});
 
     return token;
   }
